@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Allow: /public/
+Allow: /services
+Allow: /about
+Allow: /contact-us
+Allow: /blogs
+Sitemap: https://800bbattery.com/sitemap.xml

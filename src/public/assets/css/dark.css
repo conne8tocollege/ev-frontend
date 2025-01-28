@@ -1,0 +1,132 @@
+
+.dark-home .project-one__sub-title,
+.dark-home .cta-one__text,
+.dark-home .cta-one__call-box .content p {
+    color: #82878b;
+}
+
+.dark-home .page-wrapper,
+.dark-home .main-menu__wrapper-inner,
+.dark-home .stricky-header.main-menu,
+.dark-home .services-one__icon,
+.dark-home .testimonial-one__content,
+.dark-home .brand-one__inner {
+    background-color: #121212;
+}
+.dark-home .main-menu__top-inner,
+.dark-home .services-one__inner,
+.dark-home .about-one__cirtified,
+.dark-home .services-two__single,
+.dark-home .testimonial-one,
+.dark-home .brand-one,
+.dark-home .blog-one__single {
+    background-color: var(--erepair-black);
+}
+.dark-home .main-menu__contact-list li:before {
+    background-color: rgba(var(--erepair-white-rgb), .10);
+}
+.dark-home .main-menu__social a {
+    border: 1px solid rgba(var(--erepair-white-rgb), .10);
+    color: var(--erepair-gray);
+}
+.dark-home .main-menu .main-menu__list>li>a,
+.dark-home .stricky-header .main-menu__list>li>a,
+.dark-home .main-menu .main-menu__list>li.dropdown>a:after,
+.dark-home .services-one__icon span,
+.dark-home .services-one__title a,
+.dark-home .section-title__title,
+.dark-home .services-two__icon span,
+.dark-home .services-two__title a,
+.dark-home .services-two__learn-more,
+.dark-home .testimonial-one__client-info h3 a,
+.dark-home .project-one__title a,
+.dark-home .pricing-one__price-month h3,
+.dark-home .pricing-one__price-month p,
+.dark-home .pricing-one__price-pack h2,
+.dark-home .blog-one__title a,
+.dark-home .blog-one__learn-more,
+.dark-home .cta-one__call-box .content h4 a {
+    color: var(--erepair-white);
+}
+.dark-home .services-one__single::before {
+    background-color: rgba(var(--erepair-white-rgb), .10);
+}
+.dark-home .main-menu .main-menu__list>li.current>a::after,
+.dark-home .main-menu .main-menu__list>li:hover>a::after,
+.dark-home .stricky-header .main-menu__list>li.current>a::after,
+.dark-home .stricky-header .main-menu__list>li:hover>a::after {
+    color: var(--erepair-base);
+}
+.dark-home .main-menu__search {
+    border: 1px solid rgba(var(--erepair-white-rgb), .10);
+    color: var(--erepair-gray);
+}
+.dark-home .about-one__cirtified .icon::before {
+    background-color: rgba(var(--erepair-extra-rgb), .10);
+}
+.dark-home .about-one__shape-one img {
+    filter: brightness(0.05);
+}
+.dark-home .services-two__shape-1 img {
+    filter: brightness(0.5);
+}
+.dark-home .services-two__icon {
+    border: 1px solid rgba(var(--erepair-white-rgb), .10);
+    background-color: var(--erepair-black);
+}
+.dark-home .testimonial-one__quote span {
+    color: rgba(var(--erepair-white-rgb), 0.03);
+}
+.dark-home .brand-one__img>img {
+    filter: contrast(0.5);
+}
+.dark-home .project-one__btn {
+    border: 1px solid var(--erepair-black);
+    background-color: var(--erepair-black);
+    color: var(--erepair-white);
+}
+.dark-home .project-one__content {
+    background-color: var(--erepair-black);
+    border-bottom: 1px solid rgba(var(--erepair-extra-rgb), .10);
+}
+.dark-home .pricing-one__single,
+.dark-home .cta-one__inner {
+    background-color: #0e0e0e;
+}
+.dark-home .pricing-one__price-pack {
+    border-bottom: 1px solid rgba(var(--erepair-white-rgb), .10);
+}
+.dark-home .blog-one__btn::before,
+.dark-home .blog-one__btn::after {
+    background-color: var(--erepair-white);
+}
+
+.dark-home .blog-one__btn:hover {
+    color: var(--erepair-black);
+}
+.dark-home .cta-one .section-title__tagline {
+    color: var(--erepair-gray);
+}
+.dark-home .cta-one__call-box .icon {
+    background-color: var(--erepair-black);
+}
+.dark-home .cta-one__call-box .icon span {
+    color: var(--erepair-white);
+}
+.dark-home .cta-one__btn::before,
+.dark-home .cta-one__btn::after {
+    background-color: var(--erepair-white);
+}
+.dark-home .cta-one__btn:hover {
+    color: var(--erepair-black);
+}
+.dark-home .pricing-one__btn {
+    background-color: var(--erepair-black);
+    color: var(--erepair-white);
+}
+.dark-home .main-menu .mobile-nav__toggler:hover {
+    color: var(--erepair-white);
+}
+
+
+/*  */

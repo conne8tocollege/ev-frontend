@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100vh;
+}
+
+.ql-editor {
+  font-size: 1.05rem;
+}
+
+.post-content p {
+  margin-bottom: 0.5rem;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin: 1.5rem 0;
+}
+
+.post-content h2 {
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  margin: 1.5rem 0;
+}
+
+.post-content a {
+  color: rgb(73, 149, 199);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.dark .post-content a {
+  color: red;
+}
+
+.main-header-two.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  z-index: 1000;
+}
+
+/* Slide-in animation for custom CSS */
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+.main-header-two .main-menu-two__logo img {
+  width: 170px;
+}
+.main-header-two .main-menu-two__logo {
+  padding: 15px 0;
+}
+.main-header-two .main-menu-two__btn-box .main-menu-two__btn{
+  padding: 10px;
+}
+.main-header-two .main-menu-two__call-and-btn-box{
+  padding: 10px 0;
+}
+.QrCode img{
+  max-width: 90px;
+  border-radius: 10px;
+}
+
+.main-menu__list {
+  list-style: none;
+  padding: 0;
+}
+
+.main-menu__list li {
+  position: relative; 
+  margin: 10px 0;
+}
+
+.dropdown-content {
+  position: absolute; 
+  background: #444; 
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1000;
+  display: block; 
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content li {
+  margin: 5px 0; 
+}
+
+.dropdown-content li a {
+  color: white; 
+  text-decoration: none; 
+  padding: 5px 10px; 
+  display: block; 
+  transition: background-color 0.3s; 
+}
+
+.dropdown-content li a:hover {
+  background: #555; 
+}
+
+.dot-1,
+.dot-2,
+.dot-3 {
+  display: inline-block;
+  animation: dotPing 1s infinite;
+}
+
+.dot-2 {
+  animation-delay: 0.2s;
+}
+.dot-3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPing {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
