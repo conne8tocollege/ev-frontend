@@ -17,12 +17,13 @@ export default function DashDealership () {
 
   const fetchDealers = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/dealer/getdealers`);
+      const response = await fetch(`${apiUrl}/api/applicant/`);
       if (!response.ok) {
         throw new Error("Failed to fetch dealers");
       }
       const data = await response.json();
-      setDealers(data.dealers);
+      console.log(data.getDealers)
+      setDealers(data.getDealers);
       setLoading(false);
     } catch (err) {
       setError("Error fetching dealers");

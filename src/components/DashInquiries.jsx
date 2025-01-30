@@ -55,7 +55,7 @@ export default function DashBookings() {
     setShowModal(false)
     const token = localStorage.getItem("access_token")
     try {
-      const res = await fetch(`${apiUrl}/api/booking/deleteBooking/${bookingIdToDelete}`, {
+      const res = await fetch(`${apiUrl}/api/booking/${bookingIdToDelete}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
