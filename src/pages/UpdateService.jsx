@@ -280,7 +280,7 @@ export default function UpdateService() {
 
         <Button
           type="submit"
-          className="bg-orange-400 text-white hover:bg-orange-400/90 my-3"
+          className="bg-cyan-400 text-white hover:bg-cyan-400/90 my-3"
         >
           Update Service
         </Button>

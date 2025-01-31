@@ -87,7 +87,7 @@ export default function DashBrand() {
           <div className="mb-3">
             {currentUser.isAdmin && (
               <Link to={`/create-brand`}>
-                <button className="bg-orange-400 text-white hover:bg-orange-400/90 px-4 py-2 rounded-md">
+                <button className="bg-cyan-400 text-white hover:bg-cyan-400/90 px-4 py-2 rounded-md">
                   Create New Brand
                 </button>
               </Link>

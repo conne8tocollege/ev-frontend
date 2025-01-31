@@ -131,7 +131,7 @@ export function ContactForm({ sourcePage, formType }) {
       <input type="hidden" name="our_services" value={formData.our_services} />
       <input type="hidden" name="sourcePage" value={formData.sourcePage} />
 
-      <Button type="submit" className="w-full bg-orange-400 hover:bg-amber-400">
+      <Button type="submit" className="w-full bg-cyan-400 hover:bg-amber-400">
         Submit Now
       </Button>
     </form>

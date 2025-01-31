@@ -70,7 +70,7 @@ export default function Menu2({ isMobile }) {
             <ul>
               {userServices?.map((service) => (
                 <li key={service._id} className="pl-4 py-1">
-                  <Link to={`/service/${service.slug}`} className="hover:text-orange-300" aria-label={`Learn more about the service: ${service.title}`}>
+                  <Link to={`/service/${service.slug}`} className="hover:text-cyan-300" aria-label={`Learn more about the service: ${service.title}`}>
                     {service.title}
                   </Link>
                 </li>
@@ -94,7 +94,7 @@ export default function Menu2({ isMobile }) {
             <ul>
               {userProducts?.map((product) => (
                 <li key={product._id} className="pl-4 py-1">
-                  <Link to={`/product/${product.slug}`} className="hover:text-orange-300" aria-label={`Learn more about the service: ${product.title}`}>
+                  <Link to={`/product/${product.slug}`} className="hover:text-cyan-300" aria-label={`Learn more about the service: ${product.title}`}>
                     {product.title}
                   </Link>
                 </li>

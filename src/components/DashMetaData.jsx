@@ -70,7 +70,7 @@ export default function DashMetaData() {
     <div className="mt-20 overflow-x-auto p-3">
       <div className="flex gap-2">
         <Link to={`/create-metadata`}>
-          <button className="bg-orange-400 text-white py-2 px-4 rounded-md mb-3">
+          <button className="bg-cyan-400 text-white py-2 px-4 rounded-md mb-3">
             Create New Meta Data
           </button>
         </Link>

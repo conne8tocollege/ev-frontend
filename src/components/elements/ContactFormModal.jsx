@@ -208,7 +208,7 @@ export function ContactFormModal({ sourcePage }) {
 
       <input type="hidden" name="sourcePage" value={formData.sourcePage} />
 
-      <Button type="submit" className="w-full bg-orange-400 hover:bg-amber-400">
+      <Button type="submit" className="w-full bg-cyan-400 hover:bg-amber-400">
         Submit Now
       </Button>
     </form>

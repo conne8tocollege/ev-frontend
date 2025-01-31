@@ -268,7 +268,7 @@ export default function UpdatePost() {
 
         <Button
           type="submit"
-          className="bg-orange-400 text-white hover:bg-orange-400/90"
+          className="bg-cyan-400 text-white hover:bg-cyan-400/90"
         >
           Update post
         </Button>

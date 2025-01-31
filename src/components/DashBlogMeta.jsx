@@ -133,7 +133,7 @@ function DashBlogMeta() {
         <div className="px-3">
           <button
             type="submit"
-            className="px-6 py-2 bg-orange-400 text-white font-bold rounded-md hover:bg-orange-400/90"
+            className="px-6 py-2 bg-cyan-400 text-white font-bold rounded-md hover:bg-cyan-400/90"
           >
             Submit
           </button>

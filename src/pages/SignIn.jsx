@@ -91,7 +91,7 @@ export default function SignIn() {
           <Button
             type="submit"
             disabled={loading}
-            className="mt-4 w-full bg-orange-400"
+            className="mt-4 w-full bg-cyan-400"
           >
             {loading ? (
               <>

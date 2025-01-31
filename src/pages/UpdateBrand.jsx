@@ -181,7 +181,7 @@ export default function UpdateBrand() {
             setFormData({ ...formData, content: value });
           }}
         /> */}
-        <Button type="submit" className="bg-orange-400 text-white hover:bg-orange-400/90">
+        <Button type="submit" className="bg-cyan-400 text-white hover:bg-cyan-400/90">
           Update brand
         </Button>
         {publishError && (

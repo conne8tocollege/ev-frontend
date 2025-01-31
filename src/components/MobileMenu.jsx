@@ -20,23 +20,23 @@ const MobileMenu = ({ handleMobileMenu }) => {
         {/* Contact Information */}
         <ul className="mt-4 text-sm text-gray-400">
           <li className="flex items-center mb-2">
-            <i className="fa fa-envelope text-orange-400 mr-2"></i>
+            <i className="fa fa-envelope text-cyan-400 mr-2"></i>
             <Link
               to="mailto:support@800bbattery.com"
-              className="hover:text-orange-300"
+              className="hover:text-cyan-300"
             >
               support@800bbattery.com
             </Link>
           </li>
           <li className="flex items-center">
-            <i className="fa fa-phone-alt text-orange-400 mr-2"> Toll Free </i>
-            <Link to="tel:+8002272633" className="hover:text-orange-300">
+            <i className="fa fa-phone-alt text-cyan-400 mr-2"> Toll Free </i>
+            <Link to="tel:+8002272633" className="hover:text-cyan-300">
             8002272633
             </Link>
           </li>
           <li className="flex items-center  mt-2">
-            <i className="fa fa-phone-alt text-orange-400 mr-2"> Mob </i>
-            <Link to="tel:+971509344668" className="hover:text-orange-300">
+            <i className="fa fa-phone-alt text-cyan-400 mr-2"> Mob </i>
+            <Link to="tel:+971509344668" className="hover:text-cyan-300">
               +971 50934 4668
             </Link>
           </li>
