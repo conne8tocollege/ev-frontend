@@ -20,6 +20,7 @@ import DashContactMeta from '../components/DashContactMeta';
 import DashBlogMeta from '../components/DashBlogMeta';
 import DashOtherMeta from '../components/DashOtherMeta';
 import DashDealership from '../components/DashDealership';
+import DashVehicles from '../components/DashVehicles';
 
 export default function Dashboard() {
   const location = useLocation();
@@ -31,7 +32,7 @@ export default function Dashboard() {
     if (tabFromUrl) {
       setTab(tabFromUrl);
     } else {
-      setTab('dash'); 
+      setTab('dash');
     }
   }, [location.search]);
 
@@ -50,6 +51,7 @@ export default function Dashboard() {
         {tab === 'testimonials' && <DashTestimonials />}
         {tab === 'inquiries' && <DashInquirys />}
         {tab === 'dealership' && <DashDealership />}
+        {tab === 'vehicles' && <DashVehicles />}
         {tab === 'metadata' && <DashMetaData />}
         {tab === 'users' && <DashUsers />}
         {tab === 'comments' && <DashComments />}
@@ -58,7 +60,7 @@ export default function Dashboard() {
         {tab === 'contact' && <DashContactMeta />}
         {tab === 'blog' && <DashBlogMeta />}
         {tab === 'othermeta' && <DashOtherMeta />}
-      
+
       </div>
     </div>
   );

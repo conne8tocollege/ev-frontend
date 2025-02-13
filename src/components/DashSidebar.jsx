@@ -6,6 +6,7 @@ import {
   HiChartPie,
   HiInboxIn
 } from "react-icons/hi";
+import { MdElectricBike } from "react-icons/md";
 import { FaRegFileCode } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -53,9 +54,8 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={isActiveTab("dash")}
                   icon={HiChartPie}
-                  className={`cursor-pointer ${
-                    isActiveTab("dash") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("dash") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Dashboard
                 </Sidebar.Item>
@@ -66,9 +66,8 @@ export default function DashSidebar() {
                   active={isActiveTab("profile")}
                   icon={HiUser}
                   label={currentUser.isAdmin ? "Admin" : "User"}
-                  className={`cursor-pointer ${
-                    isActiveTab("profile") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("profile") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Profile
                 </Sidebar.Item>
@@ -77,17 +76,16 @@ export default function DashSidebar() {
               {/* Metadata Dropdown */}
               <Sidebar.Item
                 icon={FaRegFileCode}
-                className={`cursor-pointer ${
-                  isActiveTabMeta([
-                    "home",
-                    "about",
-                    "blog",
-                    "contact",
-                    "othermeta",
-                  ])
-                    ? "bg-cyan-200"
-                    : ""
-                }`}
+                className={`cursor-pointer ${isActiveTabMeta([
+                  "home",
+                  "about",
+                  "blog",
+                  "contact",
+                  "othermeta",
+                ])
+                  ? "bg-cyan-200"
+                  : ""
+                  }`}
               >
                 <Dropdown label="Metadata" inline>
                   <Link to="/dashboard?tab=home">
@@ -122,9 +120,8 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={isActiveTab("inquiries")}
                   icon={HiDocumentText}
-                  className={`cursor-pointer ${
-                    isActiveTab("inquiries") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("inquiries") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Booking Inquiries
                 </Sidebar.Item>
@@ -134,9 +131,8 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={isActiveTab("dealership")}
                   icon={HiInboxIn}
-                  className={`cursor-pointer ${
-                    isActiveTab("dealership") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("dealership") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Dealership
                 </Sidebar.Item>
@@ -146,9 +142,8 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={isActiveTab("posts")}
                   icon={HiDocumentText}
-                  className={`cursor-pointer ${
-                    isActiveTab("posts") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("posts") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Posts
                 </Sidebar.Item>
@@ -158,11 +153,20 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={isActiveTab("products")}
                   icon={HiDocumentText}
-                  className={`cursor-pointer ${
-                    isActiveTab("products") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("products") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Products
+                </Sidebar.Item>
+              </Link>
+              <Link to="/dashboard?tab=vehicles">
+                <Sidebar.Item
+                  active={isActiveTab("vehicles")}
+                  icon={MdElectricBike}
+                  className={`cursor-pointer ${isActiveTab("vehicles") ? "bg-cyan-200" : ""
+                    }`}
+                >
+                  Vehicles
                 </Sidebar.Item>
               </Link>
 
@@ -170,9 +174,8 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={isActiveTab("sliders")}
                   icon={HiDocumentText}
-                  className={`cursor-pointer ${
-                    isActiveTab("sliders") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("sliders") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Sliders
                 </Sidebar.Item>
@@ -182,9 +185,8 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={isActiveTab("testimonials")}
                   icon={HiDocumentText}
-                  className={`cursor-pointer ${
-                    isActiveTab("testimonials") ? "bg-cyan-200" : ""
-                  }`}
+                  className={`cursor-pointer ${isActiveTab("testimonials") ? "bg-cyan-200" : ""
+                    }`}
                 >
                   Testimonials
                 </Sidebar.Item>

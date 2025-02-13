@@ -26,13 +26,13 @@ const CreateBrand = lazy(() => import("./pages/CreateBrand"));
 const UpdateBrand = lazy(() => import("./pages/UpdateBrand"));
 const CreateTestimonial = lazy(() => import("./pages/CreateTestimonial"));
 const UpdateTestimonial = lazy(() => import("./pages/UpdateTestimonial"));
+const CreateVehicles = lazy(() => import("./pages/CreateVehicles"));
 const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
 const apiUrl = import.meta.env.VITE_BASE_URL;
 
 export default function App() {
   return (
     <>
-      
       <BrowserRouter>
         {/* Wrap the whole app inside Suspense */}
         <Suspense fallback={<FullPageLoader />}>
@@ -84,6 +84,7 @@ export default function App() {
                 path="/create-othermetadata"
                 element={<CreateOtherMetaData />}
               />
+              <Route path="/create-vehicle" element={<CreateVehicles />} />
               <Route
                 path="/update-othermetadata/other/:othermetadataId"
                 element={<UpdateOtherMetaData />}

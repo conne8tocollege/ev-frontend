@@ -10,19 +10,19 @@ export default function DashboardComp() {
     totalTestimonials: 0,
   })
 
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await fetch(`${apiUrl}/api/dashboard/stats`)
-        const data = await response.json()
-        setStats(data)
-      } catch (error) {
-        console.error("Error fetching dashboard stats:", error)
-      }
-    }
+  // useEffect(() => {
+  //   const fetchStats = async () => {
+  //     try {
+  //       const response = await fetch(`${apiUrl}/api/dashboard/stats`)
+  //       const data = await response.json()
+  //       setStats(data)
+  //     } catch (error) {
+  //       console.error("Error fetching dashboard stats:", error)
+  //     }
+  //   }
 
-    fetchStats()
-  }, [])
+  //   fetchStats()
+  // }, [])
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
