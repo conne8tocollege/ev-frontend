@@ -5,6 +5,8 @@ import UpdateMetaData from "./pages/UpdateMetaData";
 import UpdateOtherMetaData from "./pages/UpdateOtherMetaData";
 import CreateOtherMetaData from "./pages/CreateOtherMetaData";
 import CreateMetaData from "./pages/CreateMetaData";
+import VehicleDetails from "./pages/VehicleDetails";
+import UpdateVehicle from "./pages/updateVehicle";
 // Lazy loading of pages
 const SignIn = lazy(() => import("./pages/SignIn"));
 const SignUp = lazy(() => import("./pages/SignUp"));
@@ -89,6 +91,9 @@ export default function App() {
                 path="/update-othermetadata/other/:othermetadataId"
                 element={<UpdateOtherMetaData />}
               />
+              <Route path="/vehicles/:id" element={<VehicleDetails />} />
+              <Route path="/update-vehicles/:id" element={<UpdateVehicle />} />
+
               <Route path="/product/:id" element={<ProductDetails />} />
             </Route>
           </Routes>

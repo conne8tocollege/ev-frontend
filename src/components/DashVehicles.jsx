@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const apiUrl = import.meta.env.VITE_BASE_URL;
@@ -8,6 +9,8 @@ const DashVehicles = () => {
   const [showModal, setShowModal] = useState(false);
   const [vehicleIdToDelete, setVehicleIdToDelete] = useState("");
   const [vehicles, setVehicles] = useState([]);
+
+  console.log(vehicleIdToDelete);
   // /api/vehicles
   // /api/vehicles
   // /api/vehicles/:id
@@ -26,7 +29,7 @@ const DashVehicles = () => {
     };
     fetchVehicles();
   }, []);
-
+  console.log(vehicles);
   const handleDeleteVehicle = async () => {
     try {
       const token = localStorage.getItem("access_token");
@@ -44,6 +47,7 @@ const DashVehicles = () => {
         setVehicles((prev) =>
           prev.filter((product) => product._id !== vehicleIdToDelete)
         );
+        setShowModal(false);
       }
     } catch (error) {
       console.log(error.message);
@@ -103,7 +107,7 @@ const DashVehicles = () => {
                   <td className="px-4 py-2 text-sm text-gray-500">
                     <Link to={`/vehicles/${product.id}`}>
                       <img
-                        src={product.image}
+                        src={product.images[0]}
                         alt={product.name}
                         className="w-20 h-10 object-cover bg-gray-500"
                       />

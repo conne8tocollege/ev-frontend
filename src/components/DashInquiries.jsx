@@ -1,80 +1,84 @@
-import { useEffect, useState } from "react"
-import { HiOutlineExclamationCircle } from "react-icons/hi"
+import { useEffect, useState } from "react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { toast } from "react-toastify";
 
-const apiUrl = import.meta.env.VITE_BASE_URL
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 export default function DashBookings() {
-  const [bookings, setBookings] = useState([])
-  const [showMore, setShowMore] = useState(true)
-  const [showModal, setShowModal] = useState(false)
-  const [bookingIdToDelete, setBookingIdToDelete] = useState("")
+  const [bookings, setBookings] = useState([]);
+  const [showMore, setShowMore] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [bookingIdToDelete, setBookingIdToDelete] = useState("");
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const token = localStorage.getItem("access_token")
+      const token = localStorage.getItem("access_token");
       try {
-        const res = await fetch(`${apiUrl}/api/booking/getAllBookings`,
-          {
+        const res = await fetch(`${apiUrl}/api/booking/getAllBookings`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
             token: `Bearer ${token}`,
-        }
-      })
-        const data = await res.json()
+          },
+        });
+        const data = await res.json();
         if (res.ok) {
-          setBookings(data.bookings || [])
+          setBookings(data.bookings || []);
           if (data.bookings.length < 9) {
-            setShowMore(false)
+            setShowMore(false);
           }
         }
       } catch (error) {
-        console.log(error.message)
+        console.log(error.message);
       }
-    }
-    fetchBookings()
-  }, [])
+    };
+    fetchBookings();
+  }, []);
 
   const handleShowMore = async () => {
-    const startIndex = bookings.length
+    const startIndex = bookings.length;
     try {
-      const res = await fetch(`${apiUrl}/api/booking/getAllBookings?startIndex=${startIndex}`)
-      const data = await res.json()
+      const res = await fetch(
+        `${apiUrl}/api/booking/getAllBookings?startIndex=${startIndex}`
+      );
+      const data = await res.json();
       if (res.ok) {
-        setBookings((prev) => [...prev, ...(data.bookings || [])])
+        setBookings((prev) => [...prev, ...(data.bookings || [])]);
         if (data.bookings.length < 9) {
-          setShowMore(false)
+          setShowMore(false);
         }
       }
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
-  }
+  };
 
   const handleDeleteBooking = async () => {
-    setShowModal(false)
-    const token = localStorage.getItem("access_token")
+    setShowModal(false);
+    const token = localStorage.getItem("access_token");
     try {
       const res = await fetch(`${apiUrl}/api/booking/${bookingIdToDelete}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          token:`Bearer ${token}`,
+          token: `Bearer ${token}`,
         },
-      })
+      });
 
-      const data = await res.json()
+      const data = await res.json();
 
       if (!res.ok) {
-        console.error("Failed to delete booking:", data.message)
+        console.error("Failed to delete booking:", data.message);
       } else {
-        console.log(data.message)
-        setBookings((prevBookings) => prevBookings.filter((booking) => booking._id !== bookingIdToDelete))
+        toast.success("Deleted Successfully");
+        setBookings((prevBookings) =>
+          prevBookings.filter((booking) => booking._id !== bookingIdToDelete)
+        );
       }
     } catch (error) {
-      console.error("Error deleting booking:", error.message)
+      console.error("Error deleting booking:", error.message);
     }
-  }
+  };
 
   return (
     <div className="container mx-auto p-6 bg-gray-100 min-h-screen">
@@ -116,21 +120,33 @@ export default function DashBookings() {
               <tbody className="bg-white divide-y divide-gray-200">
                 {bookings.map((booking) => (
                   <tr key={booking._id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.scooterModel}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.color}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{booking.name}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.email}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.contactNumber}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {booking.scooterModel}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {booking.color}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      {booking.name}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {booking.email}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {booking.contactNumber}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{`${booking.city}, ${booking.state}`}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹{booking.bookingAmount}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      ₹{booking.bookingAmount}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {new Date(booking.createdAt).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => {
-                          setShowModal(true)
-                          setBookingIdToDelete(booking._id)
+                          setShowModal(true);
+                          setBookingIdToDelete(booking._id);
                         }}
                         className="text-red-600 hover:text-red-900"
                       >
@@ -162,7 +178,9 @@ export default function DashBookings() {
           <div className="bg-white p-8 rounded-lg shadow-xl max-w-md mx-auto">
             <div className="text-center">
               <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400" />
-              <h3 className="mb-5 text-lg font-normal text-gray-500">Are you sure you want to delete this booking?</h3>
+              <h3 className="mb-5 text-lg font-normal text-gray-500">
+                Are you sure you want to delete this booking?
+              </h3>
               <div className="flex justify-center gap-4">
                 <button
                   onClick={handleDeleteBooking}
@@ -182,6 +200,5 @@ export default function DashBookings() {
         </div>
       )}
     </div>
-  )
+  );
 }
-

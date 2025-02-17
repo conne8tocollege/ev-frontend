@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { HiOutlineExclamationCircle, HiTrash } from "react-icons/hi";
 import React from "react";
+import { toast } from "react-toastify";
 
 const apiUrl = import.meta.env.VITE_BASE_URL;
 
-export default function DashDealership () {
+export default function DashDealership() {
   const [dealers, setDealers] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [dealerIdToDelete, setDealerIdToDelete] = useState("");
@@ -17,12 +18,17 @@ export default function DashDealership () {
 
   const fetchDealers = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/applicant/`);
+      const access_token = localStorage.getItem("access_token");
+      const response = await fetch(`${apiUrl}/api/applicant/`, {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      });
       if (!response.ok) {
         throw new Error("Failed to fetch dealers");
       }
       const data = await response.json();
-      console.log(data.getDealers)
+      console.log(data.getDealers);
       setDealers(data.getDealers);
       setLoading(false);
     } catch (err) {
@@ -33,15 +39,24 @@ export default function DashDealership () {
 
   const handleDeleteDealer = async () => {
     try {
+      const token = localStorage.getItem("access_token");
+
       const response = await fetch(
-        `${apiUrl}/api/dealer/deletedelear/${dealerIdToDelete}`,
+        `${apiUrl}/api/applicant/${dealerIdToDelete}`,
         {
           method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
+
       if (!response.ok) {
         throw new Error("Failed to delete dealer");
+      } else {
+        toast.success("Deleted Successfully");
       }
+
       setDealers(dealers.filter((dealer) => dealer._id !== dealerIdToDelete));
       setShowModal(false);
     } catch (err) {
@@ -161,5 +176,4 @@ export default function DashDealership () {
       )}
     </div>
   );
-};
-
+}
