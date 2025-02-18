@@ -62,6 +62,7 @@ const UpdateVehicle = () => {
       ]);
       setImages(uploadedImages);
       setSelectedFiles([]);
+      toast.success("Image uploaded successfully!");
     } catch (error) {
       console.error("Image upload failed", error);
       toast.error("Image upload failed", { position: "top-right" });
@@ -86,7 +87,6 @@ const UpdateVehicle = () => {
         }
       );
 
-      console.log("Vehicle updated:", response.data);
       toast.success("Vehicle updated successfully!", { position: "top-right" });
       navigate("/dashboard?tab=vehicles"); // Redirect to vehicles list
     } catch (error) {
@@ -94,6 +94,30 @@ const UpdateVehicle = () => {
       toast.error("Error updating vehicle!", { position: "top-right" });
     }
     setIsLoading(false);
+  };
+
+  const handleDeleteImage = async (imageUrl) => {
+    const access_token = localStorage.getItem("access_token");
+    try {
+      await axios.patch(
+        `${apiUrl}/api/vehicles/${id}/delete-images`,
+        {
+          images: [imageUrl],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
+        }
+      );
+
+      // Remove image from state after successful API call
+      setUploadedImages(uploadedImages.filter((img) => img !== imageUrl));
+      toast.success("Image deleted successfully!");
+    } catch (error) {
+      console.error("Error deleting image:", error);
+      toast.error("Failed to delete image.");
+    }
   };
 
   return (
@@ -228,12 +252,20 @@ const UpdateVehicle = () => {
             </h2>
             <div className="flex flex-wrap gap-2 mt-2">
               {uploadedImages.map((url, index) => (
-                <img
-                  key={index}
-                  src={url || "/placeholder.svg"}
-                  alt={`Uploaded ${index + 1}`}
-                  className="w-20 h-20 object-cover rounded"
-                />
+                <div key={index} className="relative">
+                  <img
+                    src={url}
+                    alt={`Uploaded ${index + 1}`}
+                    className="w-20 h-20 object-cover rounded"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteImage(url)}
+                    className="absolute top-0 right-0 bg-red-600 text-white text-xs p-1 rounded-full"
+                  >
+                    ✕
+                  </button>
+                </div>
               ))}
             </div>
           </div>
